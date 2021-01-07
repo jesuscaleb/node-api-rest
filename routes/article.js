@@ -36,7 +36,7 @@ let storage = multer.diskStorage({
 let md_upload = multer({ storage: storage });
 
 // Rutas de prueba
-router.get('/getData', ArticleController.getData);
+router.get('/', ArticleController.getData);
 router.post('/postData', ArticleController.postData);
 
 // Rutas de article
