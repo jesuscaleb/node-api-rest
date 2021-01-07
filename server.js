@@ -16,7 +16,7 @@ var mongoose = require('mongoose');
 var app = require('./app');
 
 app.set('port', process.env.PORT || 3900 );
-const url = "mongodb+srv://strider:BmgkbN82DWVAB4zg@cluster0.kzadw.mongodb.net/mymongodb?retryWrites=true&w=majority";
+const url = "mongodb+srv://strider:BmgkbN82DWVAB4zg@cluster0.kzadw.mongodb.net/api_rest_blog?retryWrites=true&w=majority";
 
 // Uso de promesa para evitar fallos al conectarse con la base de datos o usar diferentes módulos de MongoDB
 mongoose.Promise = global.Promise;
