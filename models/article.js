@@ -8,10 +8,10 @@
 
 'use strict'
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
-var ArticleSchema = Schema({
+let ArticleSchema = Schema({
     title : String,
     content : String,
     date : { type: Date, default: Date.now},

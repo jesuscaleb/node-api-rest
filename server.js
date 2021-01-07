@@ -15,8 +15,8 @@
 var mongoose = require('mongoose');
 var app = require('./app');
 
-var port = 3900;
-var url = "mongodb://localhost:27017/api_rest_blog";
+app.set('port', process.env.PORT || 3900 );
+const url = "mongodb://localhost:27017/api_rest_blog";
 
 // Uso de promesa para evitar fallos al conectarse con la base de datos o usar diferentes módulos de MongoDB
 mongoose.Promise = global.Promise;
@@ -30,7 +30,7 @@ mongoose.connect(url)
         console.log("Database connection successful.");
 
         // Crear servidor web y habilitar recepción de peticiones HTTP
-        app.listen(port, ()=>{
-            console.log("Server running in http://localhost:" + port);
+        app.listen(app.get('port'), ()=>{
+            console.log("Server running in http://localhost:" + app.get('port'));
         });
     });
