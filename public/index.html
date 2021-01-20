@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Hello World!</title>
+</head>
+<body>
+    
+    <div class="content">
+        <div class="content-header">
+            <h1>Mi API</h1>
+        </div>
+        <div class="content-body">
+            <div class="resource">
+                <div class="heading">
+                    <h2>
+                        jcob-myapi/api
+                    </h2>
+                    
+                    <ul class="options">
+                        <li>
+                          <a href="#" class="collapseResource" data-id="myapi" data-sw-translate="">
+                            Contraer lista
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="expandResource" data-id="myapi" data-sw-translate="">
+                            Expandir lista
+                          </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Item -->
+                <ul class="endpoints" id="myapi-endpoint-list">
+                    <li class="endpoint">
+                        <ul class="operations">
+                            <li class="get operation">
+                                <!-- Item Heading -->
+                                <div class="heading" onclick="_script.toggleContent(1);">
+                                    <h3>
+                                      <span class="http_method">
+                                      <a>get</a>
+                                      </span>
+                                      <span class="path">
+                                      <a>/articles/:last?</a>
+                                      </span>
+                                    </h3>
+                                    <ul class="options">
+                                      <li>
+                                        <a>Despliega todos los registros existentes en la instancia article.</a>
+                                      </li>
+                                    </ul>
+                                </div>
+                                <!-- Item Content -->
+                                <div class="item-content" id="content_1" style="display: none;">
+                                  <h4><span data-sw-translate="">Response Class</span> (<span data-sw-translate="">Status</span> 200)</h4>
+                                  <div class="model-signature">                                     
+                                    <ul class="signature-nav">
+                                      <li><a class="description-link" href="#" data-sw-translate="">Model</a></li>
+                                      <li><a class="snippet-link selected" href="#" data-sw-translate="">Model Schema</a></li>
+                                    </ul>
+                                    
+                                    <div class="signature-container">                                
+                                      <div class="snippet">
+                                        <pre>
+                                          <code>
+                                            [
+                                              {
+                                                "_id" : ObjectId("string"),
+                                                "date" : ISODate("date"),
+                                                "title" : "string",
+                                                "content" : "string",
+                                                "image" : null,
+                                                "__v" : 0
+                                              }
+                                            ]
+                                          </code>
+                                        </pre>
+                                        <small class="notice"></small>
+                                      </div>
+                                    </div>
+                                    
+                                    <div class="param_table">
+                                      <h4 data-sw-translate="">Parámetros</h4>
+                                      <table class="fullwidth">
+                                      <thead>
+                                        <tr>
+                                        <th style="width: 100px; max-width: 100px" data-sw-translate="">Parámetro</th>
+                                        <th style="width: 120px; max-width: 310px" data-sw-translate="">Valor</th>
+                                        <th style="width: 200px; max-width: 200px" data-sw-translate="">Descripción</th>
+                                        <!-- <th style="width: 100px; max-width: 100px" data-sw-translate="">Tipo de parámetro</th> -->
+                                        <th style="width: 100px; max-width: 230px" data-sw-translate="">Tipo de data</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody class="operation-params">
+                                        <tr>
+                                          
+                                        <td class="code"><label for="mfilter0.5860265701669134">/:last?</label></td>
+                                        <td>any</td> 
+                            <td class="markdown"><p>
+                              Filtra las últimos 5 registros. El valor de este parámetro es irrelevante, basta asignar cualquier valor para ejecutar la consulta.
+                            </p>
+                            </td>
+                            <td>
+                              <span class="model-signature">any</span>
+                            </td>
+                            </tr></tbody>
+                                      </table>
+
+                                      </div>
+                                      <h4 data-sw-translate="">Response Messages</h4>
+                                      
+                                      <div class="sandbox_header" id="form_get_articles">
+                                        <!--  <label for="">filtro</label> -->
+                                        <input class="parameter" minlength="0" name="last" placeholder="filtro" id="filter_get_articles" type="text">
+                                        <button type="button" class="submit" onclick="_script.formHandler('get_articles')">Ejecutar consulta</button>
+                                        <a style="display: none;" class="response_hider">Esconder respuesta</a>
+                                        <span class="response_throbber" style="display: none;"></span>
+                                      </div>
+                                    
+
+                                    <div class="response" id="get_articles" style="display: none;"></div>
+                                  </div>
+                                </div>
+                            </li>
+                            <li class="get operation">
+                              <!-- Item Heading -->
+                              <div class="heading" onclick="_script.toggleContent(2);">
+                                  <h3>
+                                    <span class="http_method">
+                                    <a>get</a>
+                                    </span>
+                                    <span class="path">
+                                    <a>/article/:id</a>
+                                    </span>
+                                  </h3>
+                                  <ul class="options">
+                                    <li>
+                                      <a>Busca un registro en específico según su identificador.</a>
+                                    </li>
+                                  </ul>
+                              </div>
+                              <!-- Item Content -->
+                              <div class="item-content" id="content_2" style="display: none;">
+                                <h4><span data-sw-translate="">Response Class</span> (<span data-sw-translate="">Status</span> 200)</h4>
+                                <div class="model-signature">                                     
+                                  <ul class="signature-nav">
+                                    <li><a class="description-link" href="#" data-sw-translate="">Model</a></li>
+                                    <li><a class="snippet-link selected" href="#" data-sw-translate="">Model Schema</a></li>
+                                  </ul>
+                                  
+                                  <div class="signature-container">                                
+                                    <div class="snippet">
+                                      <pre>
+                                        <code>
+                                          [
+                                            {
+                                              "_id" : ObjectId("string"),
+                                              "date" : ISODate("date"),
+                                              "title" : "string",
+                                              "content" : "string",
+                                              "image" : null,
+                                              "__v" : 0
+                                            }
+                                          ]
+                                        </code>
+                                      </pre>
+                                      <small class="notice"></small>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="param_table">
+                                    <h4 data-sw-translate="">Parámetros</h4>
+                                    <table class="fullwidth">
+                                    <thead>
+                                      <tr>
+                                      <th style="width: 100px; max-width: 100px" data-sw-translate="">Parámetro</th>
+                                      <th style="width: 120px; max-width: 310px" data-sw-translate="">Valor</th>
+                                      <th style="width: 200px; max-width: 200px" data-sw-translate="">Descripción</th>
+                                      <!-- <th style="width: 100px; max-width: 100px" data-sw-translate="">Tipo de parámetro</th> -->
+                                      <th style="width: 100px; max-width: 230px" data-sw-translate="">Tipo de data</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="operation-params">
+                                      <tr>
+                                        
+                                      <td class="code"><label for="mfilter0.5860265701669134">/:id</label></td>
+                                      <td>string</td> 
+                                      <td class="markdown"><p>
+                                        Se envía un código que sirve de identificador para encontrar el registro específico. Ingresar el valor de este parámetro es obligatorio.
+                                      </p>
+                                      </td>
+                                      <td>
+                                        <span class="model-signature">string</span>
+                                      </td>
+                                      </tr></tbody>
+                                    </table>
+
+                                    </div>
+                                    <h4 data-sw-translate="">Response Messages</h4>
+                                    
+                                    <div class="sandbox_header" id="form_get_article_id">
+                                      <!--  <label for="">filtro</label> -->
+                                      <p class="text-error" >Este campo es obligatorio</p>
+                                      <input class="parameter" minlength="0" name="id" placeholder="filtro" id="filter_get_article_id" type="text" required>
+                                      <button type="button" class="submit" onclick="_script.formHandler('get_article_id')">Ejecutar consulta</button>
+                                      <a style="display: none;" class="response_hider">Esconder respuesta</a>
+                                      <span class="response_throbber" style="display: none;"></span>
+                                    </div>
+                                  
+
+                                  <div class="response" id="get_article_id" style="display: none;"></div>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class="get operation">
+                              <!-- Item Heading -->
+                              <div class="heading" onclick="_script.toggleContent(3);">
+                                  <h3>
+                                    <span class="http_method">
+                                    <a>get</a>
+                                    </span>
+                                    <span class="path">
+                                    <a>/search/:search</a>
+                                    </span>
+                                  </h3>
+                                  <ul class="options">
+                                    <li>
+                                      <a>Buscará registros que coincidan con el valor ingresado en la instancia article.</a>
+                                    </li>
+                                  </ul>
+                              </div>
+                              <!-- Item Content -->
+                              <div class="item-content" id="content_3" style="display: none;">
+                                <h4><span data-sw-translate="">Response Class</span> (<span data-sw-translate="">Status</span> 200)</h4>
+                                <div class="model-signature">                                     
+                                  <ul class="signature-nav">
+                                    <li><a class="description-link" href="#" data-sw-translate="">Model</a></li>
+                                    <li><a class="snippet-link selected" href="#" data-sw-translate="">Model Schema</a></li>
+                                  </ul>
+                                  
+                                  <div class="signature-container">                                
+                                    <div class="snippet">
+                                      <pre>
+                                        <code>
+                                          [
+                                            {
+                                              "_id" : ObjectId("string"),
+                                              "date" : ISODate("date"),
+                                              "title" : "string",
+                                              "content" : "string",
+                                              "image" : null,
+                                              "__v" : 0
+                                            }
+                                          ]
+                                        </code>
+                                      </pre>
+                                      <small class="notice"></small>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="param_table">
+                                    <h4 data-sw-translate="">Parámetros</h4>
+                                    <table class="fullwidth">
+                                    <thead>
+                                      <tr>
+                                      <th style="width: 100px; max-width: 100px" data-sw-translate="">Parámetro</th>
+                                      <th style="width: 120px; max-width: 310px" data-sw-translate="">Valor</th>
+                                      <th style="width: 200px; max-width: 200px" data-sw-translate="">Descripción</th>
+                                      <!-- <th style="width: 100px; max-width: 100px" data-sw-translate="">Tipo de parámetro</th> -->
+                                      <th style="width: 100px; max-width: 230px" data-sw-translate="">Tipo de data</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="operation-params">
+                                      <tr>
+                                        
+                                      <td class="code"><label for="mfilter0.5860265701669134">/:search</label></td>
+                                      <td>string</td> 
+                                      <td class="markdown"><p>
+                                        Se envía un texto que sirva como referencia para identificar al registro que se espera encontrar. Ingresar el valor del parámetro es obligatorio. 
+                                      </p>
+                                      </td>
+                                      <td>
+                                        <span class="model-signature">string</span>
+                                      </td>
+                                      </tr></tbody>
+                                    </table>
+
+                                    </div>
+                                    <h4 data-sw-translate="">Response Messages</h4>
+                                    
+                                    <div class="sandbox_header" id="form_get_articles_search">
+                                      <!--  <label for="">filtro</label> -->
+                                      <p class="text-error" >Este campo es obligatorio</p>
+                                      <input class="parameter" minlength="0" name="filter" placeholder="filtro" id="filter_get_articles_search" type="text" required>
+                                      <button type="button" class="submit" onclick="_script.formHandler('get_articles_search')">Ejecutar consulta</button>
+                                      <a style="display: none;" class="response_hider">Esconder respuesta</a>
+                                      <span class="response_throbber" style="display: none;"></span>
+                                    </div>
+                                  
+
+                                  <div class="response" id="get_articles_search" style="display: none;"></div>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Desarrollado por <a href="https://github.com/jesuscaleb">Jesús Caleb</a>. Solo se encuentran peticiones HTTP de tipo GET como demostración en esta página.</p>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script async src="js/script.js"></script>
+      <script async src="js/data.js"></script>
+</body>
+</html>

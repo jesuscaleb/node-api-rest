@@ -1,0 +1,394 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0 auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(251, 251, 251);
+}
+
+a {
+    cursor: pointer;
+    text-decoration-line: underline;
+}
+
+.content { 
+    flex: 1 0 auto;
+}
+
+
+.content-header {
+    width: 100%;
+    height: auto;
+    background-color: rgb(16, 194, 4);
+}
+
+.content-header h1 {
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(251, 251, 251);
+    padding: 10px;
+    letter-spacing: 0.07em;
+    font-size: 1.8em;
+}
+
+.content-body{
+    max-width: 65rem;
+    min-height: 90%;
+    margin: 0 auto;
+    height: auto;
+    background: rgb(255,255,255);
+    padding: 1em 1em 2em;;
+}
+
+/* Resources */
+.resource .heading{
+    border: 1px solid transparent;
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+}
+
+.resource .heading h2 {
+    color: #999999;
+    padding-left: 0;
+    display: block;
+    clear: none;
+    float: left;
+    font-family: "Droid Sans", sans-serif;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.resource .heading ul,
+.resource ul.endpoints, 
+.resource ul.endpoints li.endpoint ul.operations{
+    list-style: none;
+}
+
+
+/* Body heading */
+
+.resource .heading ul.options {
+    overflow: hidden;
+    padding: 0;
+    display: block;
+    clear: none;
+    float: right;
+    margin: 14px 10px 0 0;
+}
+
+.resource .heading ul.options li:first-child {
+    padding-left: 0;
+}
+
+.resource .heading ul.options li:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+.resource .heading ul.options li {
+    float: left;
+    clear: none;
+    margin: 0;
+    padding: 2px 10px;
+    border-right: 1px solid #dddddd;
+    color: #666666;
+    font-size: 0.9em;
+}
+
+.resource .heading ul.options li a{
+    text-decoration: none;
+    color: #555555;
+}
+
+.resource .heading ul.options li a:hover{
+    text-decoration-line: underline;
+}
+
+/* Body list */ 
+
+.resource ul.endpoints{
+    padding-left: 0;
+}    
+
+.resource ul.endpoints li.endpoint ul.operations:first-child {
+    padding-left: 0;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation {
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation div.heading{
+    float: none;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading{
+    background-color: #e6f3f6 !important;
+    border: 1px solid #bfe1e8 !important;
+    cursor: pointer;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3{
+    display: block;
+    clear: none;
+    float: left;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+    color: black;
+    
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3 span {
+    margin: 0;
+    padding: 0;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3 span.http_method a {
+    background-color: #0085a1;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 50px;
+    font-size: 0.7em;
+    text-align: center;
+    padding: 7px 0 4px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3 span.path {
+    padding-left: 10px;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3 span.path a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.90em;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3 span.path a:hover{
+    text-decoration: underline;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading ul.options {
+    overflow: hidden;
+    padding: 0;
+    display: block;
+    clear: none;
+    float: right;
+    margin: 5px 10px 0 0;
+}
+
+.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading ul.options li a{
+    color: #0f6ab4;
+    text-decoration: none;
+}
+
+/* Item Content */
+
+.resource ul.operations li.operation div.item-content{
+    border-top: none;
+    padding: 10px;
+    -moz-border-radius-bottomleft: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -o-border-bottom-left-radius: 6px;
+    -ms-border-bottom-left-radius: 6px;
+    -khtml-border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -o-border-bottom-right-radius: 6px;
+    -ms-border-bottom-right-radius: 6px;
+    -khtml-border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin: 0 0 20px;
+}
+
+.resource ul.operations li.operation.get div.item-content h4{
+    font-size: 1em;
+    margin: 0;
+    padding: 15px 0 5px;
+}
+
+/* Item Content: http_get class */
+.resource ul.operations li.operation.get div.item-content{
+    background-color: #ebf3f9;
+    border: 1px solid #c3d9ec;
+}
+
+.resource ul.operations li.operation.get div.item-content h4{
+    color: #0085a1;
+}
+
+.resource ul.operations li.operation.get div.item-content p{
+    line-height: 1.4em;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature{
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature ul.signature-nav {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature ul.signature-nav li {
+    float: left;
+    margin: 0 5px 5px 0;
+    padding: 2px 5px 2px 0;
+    border-right: 1px solid #ddd;   
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature ul.signature-nav li:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature ul.signature-nav a {
+    text-decoration: none;
+    color: #AAA;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature ul.signature-nav .selected {
+    color: black;
+    text-decoration: none;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature div.signature-container {
+    clear: both;
+}
+
+.resource ul.operations li.operation.get div.item-content div.model-signature pre {
+    font-size: .85em;
+    line-height: 0.2em;
+    overflow: auto;
+    max-height: 200px;
+    cursor: pointer;
+    background-color: #fcf6db;
+    border: 1px solid #e5e0c6;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 5px;
+    white-space: pre-line;
+
+}
+
+
+.resource ul.operations li.operation.get div.item-content div.model-signature pre code{
+    font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    line-height: 1.6em;
+    background: none;
+    
+}
+
+.param_table{
+    overflow-x: auto;
+}
+
+.param_table table thead tr th{
+    padding: 5px;
+    font-size: 0.9em;
+    color: #666666;
+    border-bottom: 1px solid #999999;
+}
+
+.response_throbber {
+    background-image: url(../img/throbber.gif);
+    width: 128px;
+    height: 16px;
+    clear: none;
+    float: right;
+}
+
+.field-error {
+    border: 2px red solid;   
+}
+
+.text-error {
+    color: red;
+    font-size: 13px;
+    margin: 0 auto;
+    padding: 0;
+    display: none;
+}
+
+/* Footer */
+
+.footer { 
+    flex-shrink: 0;
+    background-color: rgb(251, 251, 251);
+    border-top: solid 2px rgb(143, 194, 4);
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.footer p {
+    color: rgb(92, 92, 92);
+    font-size: 0.9em;
+}
+
+.footer p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(9, 139, 0);
+    -moz-transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -ms-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    background-color: none;
+}
+
+.footer p a:hover {
+    -moz-transition: background-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -ms-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    background-color: rgb(202, 255, 199);
+}
+
+@media screen and (max-width: 736px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .footer p {
+        padding: 0 15px 0 15px;
+        margin: 10px auto 10px auto;
+        font-size: 0.75em;
+    }
+
+
+}

@@ -25,7 +25,14 @@ app.use((req, res, next) => {
 });
 
 // Añadir prefijos a rutas  | Cargar rutas
-app.use('/', article_routes);
+app.use('/api', article_routes);
+
+// making static page folder
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res){
+    res.sendFile('public/index.html', {root: __dirname});
+});
 
 // Exportar modulo (fichero actual)
 module.exports = app; 
