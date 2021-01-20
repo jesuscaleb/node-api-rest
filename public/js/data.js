@@ -1,4 +1,4 @@
-const api = "https://jcob-myapi.herokuapp.com/";
+const api = "https://jcob-myapi.herokuapp.com/api/";
 _data = {
     handleUrl(formData, op){
         var full_url;
