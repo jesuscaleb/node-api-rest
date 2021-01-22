@@ -1,14 +1,14 @@
 'use strict'
 
-let express = require('express');
-let ArticleController = require('../controllers/article');
+const express = require('express');
+const ArticleController = require('../controllers/article');
 
-let router = express.Router();
+const router = express.Router();
 
 // Multipart (multer)
-let multer = require('multer');
+const multer = require('multer');
 // Path (necesario para conseguir la extensión del fichero)
-let path = require('path');
+const path = require('path');
 
 const uniqueSuffix = () => {
   let now = new Date();
@@ -35,9 +35,8 @@ let storage = multer.diskStorage({
 let md_upload = multer({ storage: storage });
 
 // Rutas de prueba
-router.get('/', ArticleController.getData);
+router.get('/getData', ArticleController.getData);
 router.post('/postData', ArticleController.postData);
-
 // Rutas de article
 router.post('/save', ArticleController.save);
 // Parametros adicionales para la URL se identifican agregando un ? después del parámetro

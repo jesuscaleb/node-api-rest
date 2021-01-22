@@ -1,15 +1,15 @@
 'use strict'
 
 // Cargar módulos de node para crear el servidor web.
-
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // Ejecutar la dependencia "express" (http)
-var app = express();
+const app = express();
 
 // Cargar ficheros de las rutas.
-var article_routes = require('./routes/article');
+const article_routes = require('./routes/article');
+const email_routes = require('./routes/email');
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended: false}));
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 // Añadir prefijos a rutas  | Cargar rutas
 app.use('/api', article_routes);
-
+app.use('/api/email', email_routes);
 // making static page folder
 app.use(express.static(__dirname + '/public'));
 
