@@ -12,11 +12,14 @@
 'use strict'
 
 // Importar y cargar módulos de node_modules y personalizados
-var mongoose = require('mongoose');
-var app = require('./app');
+const mongoose = require('mongoose');
+const app = require('./app');
+const dbConfig = require("./config/db.config");
 
 app.set('port', process.env.PORT || 3900 );
-const url = "mongodb+srv://strider:BmgkbN82DWVAB4zg@cluster0.kzadw.mongodb.net/api_rest_blog?retryWrites=true&w=majority";
+
+const prod_url = dbConfig.DB_PROD_URL;
+const url = `mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`;
 
 // Uso de promesa para evitar fallos al conectarse con la base de datos o usar diferentes módulos de MongoDB
 mongoose.Promise = global.Promise;
@@ -25,7 +28,7 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true)
 mongoose.set('useFindAndModify', false);
 
-mongoose.connect(url)
+mongoose.connect(prod_url)
     .then(()=>{
         console.log("Database connection successful.");
 

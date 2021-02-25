@@ -1,15 +1,12 @@
 "use strict";
 
-// Importar validator
-
-var validator = require("validator");
-var Article = require("../models/article");
-
+const validator = require("validator");
+const Article = require("../models/article");
 // Importar FileSystem y Path para la gestión de ficheros.
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-var controller = {
+const _article = {
   getData: (req, res) => {
     return res.status(200).send({
       name: "Jesus Caleb",
@@ -20,7 +17,7 @@ var controller = {
   },
 
   postData: (req, res) => {
-    var message = req.body.message;
+    let message = req.body.message;
 
     return res.status(200).send({
       message,
@@ -224,79 +221,6 @@ var controller = {
         });
     });
     
-  },
-  upload : (req, res)=> {
-    // Configurar el módulo connect multiparty router/article.js
-    if (!req.file) {
-      return res.status(404).send({
-        status : "error",
-        message : 'Image not uploaded.'
-      });
-    }
-    // Conseguir nombre y la extensión del archivo
-    var file_path = req.file.path;
-    var file_split = file_path.split('\\');
-
-    // ADVERTENCIA: En Linux o Mac 
-    //     var file_split = file_path.split('/');
-    
-    // Nombre del archivo
-    var file_name = file_split[2];
-    
-    // Extension del fichero
-    var extension_split = file_name.split('\.');
-    var file_ext = extension_split[1];
-
-    // Comprobar la extensión, solo imagenes, si es valida borrar el fichero
-    if (file_ext != 'png' && file_ext != 'jpg' && file_ext != 'jpeg' && file_ext != 'gif') {
-      // Borrar el archivo subido usando libreria FileSystem
-
-      fs.unlink(file_path, (err)=> {
-        return res.status(200).send({
-          status : 'error',
-          message : 'File extension is not valid.'
-        });
-      })
-
-    }else{
-
-      return res.status(200).send({
-        status : 'success',
-        image: file_name,
-        message: "File has been uploaded successfully"
-      });
-
-    }   
-  }, // end upload file
-  getImage : (req, res) => {
-
-    var file = req.params.image;
-    var path_file = "./upload/articles/" + file;
-
-    // En Node.js v0.12.x en adelante, fs.exists está obsoleto por la cual se procede con fs.stat.
-
-    fs.stat(path_file, (err, exists) => {
-      if(exists) {
-        /**
-         * Devolver el fichero en crudo para incrustarlo en la etiqueta de imagen.
-         * res.sendFile() => Pertenece a la libreria express
-         * Resolver la ruta y sacar el fichero como tal
-         * path.resolve() => Pertenece a la libreria path 
-         */
-        return res.sendFile(path.resolve(path_file));
-        
-      } else if(err.code === 'ENOENT') {
-        return res.status(200).send({
-          status : 'error',
-          message : 'File does not exist.'
-        });
-      } else {
-        return res.status(200).send({
-          status : 'error',
-          message : 'An error has occured. Code ' + err.code + '.'
-        });
-      }
-    }); 
   }, // end get image
   search : (req, res) => {
     // Usar el parámetro del url
@@ -328,6 +252,6 @@ var controller = {
       });
     });
   }
-}; // end controller
+}; // end _article
 
-module.exports = controller;
+module.exports = _article;

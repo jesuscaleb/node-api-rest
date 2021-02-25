@@ -10,6 +10,7 @@ const app = express();
 // Cargar ficheros de las rutas.
 const article_routes = require('./routes/article');
 const email_routes = require('./routes/email');
+const auth_routes = require('./routes/auth');
 
 // Middlewares
 app.use(bodyParser.urlencoded({extended: false}));
@@ -27,6 +28,8 @@ app.use((req, res, next) => {
 // Añadir prefijos a rutas  | Cargar rutas
 app.use('/api', article_routes);
 app.use('/api/email', email_routes);
+app.use('/api/auth', auth_routes);
+
 // making static page folder
 app.use(express.static(__dirname + '/public'));
 
